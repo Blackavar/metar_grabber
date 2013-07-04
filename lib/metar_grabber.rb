@@ -1,6 +1,6 @@
 class MetarGrabber
   module MetarGrabber::Filepath
-    def surface_filename
+    def self.surface_filename(input_time)
 
     end
 
