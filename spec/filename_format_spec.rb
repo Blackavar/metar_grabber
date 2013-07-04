@@ -11,4 +11,14 @@ describe MetarGrabber::Filepath do
     test_utc.should == '20071102_sao.gem'
   end
 
+  describe '.gem_filename with hour - same day' do
+    test_edt = MetarGrabber::Filepath.gem_filename(Time.new(2007,11,1,12, 5,0, "-05:00"), 'warn', 12)
+    test_edt.should == '2007110112_warn.gem'
+  end
+
+  describe '.gem_filename with hour - next day' do
+    test_edt = MetarGrabber::Filepath.gem_filename(Time.new(2007,11,1,20, 5,0, "-05:00"), 'warn', 12)
+    test_edt.should == '2007110212_warn.gem'
+  end
+
 end
