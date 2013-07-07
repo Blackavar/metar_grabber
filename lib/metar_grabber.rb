@@ -10,8 +10,11 @@ class MetarGrabber
       input_time.utc
       date_part = input_time.gmtime.strftime('%Y%m%d')
       filenames = []
-      filenames[0] = "#{sat_type}_#{date_part}_#{input_time.gmtime.strftime('%H')}#{start}"
-      filenames[1] = "#{sat_type}_#{date_part}_#{input_time.gmtime.strftime('%H')}#{start+30}"
+      (0..1).each do |count|
+        minutes = start + (count * 30)
+        padded = "%02d" % minutes
+        filenames[count] = "#{sat_type}_#{date_part}_#{input_time.gmtime.strftime('%H')}#{padded}"
+      end
       filenames
     end
 
