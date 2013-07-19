@@ -45,4 +45,16 @@ describe MetarGrabber::Filepath do
       test_utc.should == ['VIS_20071102_0100','VIS_20071102_0130']
     end
   end
+
+  describe '.radar_filename' do
+    it "when UTC is same day" do
+      test_edt = MetarGrabber::Filepath.radar_filename(Time.new(2007,11,1,12, 5,0, "-05:00"), 'FOP1')
+      test_edt.should == 'FOP1_20071101_1705'
+    end
+
+    it 'when UTC is next day' do
+      test_utc = MetarGrabber::Filepath.radar_filename(Time.new(2007,11,1,20, 5,0, "-05:00"), 'FOP1')
+      test_utc.should == 'FOP1_20071102_0105'
+    end
+  end
 end

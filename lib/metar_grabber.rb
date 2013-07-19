@@ -18,5 +18,10 @@ class MetarGrabber
       filenames
     end
 
+    def self.radar_filename(input_time,location)
+      date_part = input_time.gmtime.strftime('%Y%m%d_%H%M')
+      "#{location}_#{date_part}"
+    end
+
   end
 end
