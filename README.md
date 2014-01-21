@@ -1,3 +1,5 @@
+TravisCI build status: [![Build Status](https://travis-ci.org/Blackavar/metar_grabber.png?branch=master)](https://travis-ci.org/Blackavar/metar_grabber)
+
 METAR Grabber
 =============
 
