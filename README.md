@@ -29,3 +29,5 @@ From NOAA directly:
 Calculated:
 
 * GRIB parsing of RAP data
+
+Added to internal Go build server.
